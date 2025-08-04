@@ -15,7 +15,7 @@ public class CartTest {
     public void setup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.automationexercise.com/");
+        driver.get("https://www.automationexercise.com/products");
     }
 
     @Test

@@ -14,22 +14,21 @@ public class SearchTest {
 
     @BeforeMethod
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:/tools/chromedriver.exe"); // 🔁 Replace with your local path
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.automationexercise.com/");
+        driver.get("https://www.automationexercise.com/products");
     }
 
     @Test
     public void testSearchProduct() throws InterruptedException {
-        // Use HomePage class to search
+        
         HomePage homePage = new HomePage(driver);
         homePage.enterSearchText("Tshirt");
         homePage.clickSearchButton();
 
-        Thread.sleep(2000); // Wait for result to load
+        Thread.sleep(3000);
 
-        // Use SearchResultsPage class to verify result
+       
         SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
         boolean isVisible = searchResultsPage.isProductListVisible();
 
